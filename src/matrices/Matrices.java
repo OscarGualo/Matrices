@@ -18,22 +18,26 @@ public class Matrices {
     int opc = 0 ; 
     int y = 0; 
     boolean boleano;
+    
     do {
-      System.out.println("Que desea hallar ?");
-      System.out.println("1. Valor Propio");
+      System.out.println("//// BIENVENIDOS AL INICIO DEL PROGRAMA /// \n");
+      System.out.println("--- Que desea hallar ? ---\n");
       System.out.println("2. Vector propio");
+      System.out.println("1. Valor Propio");
+      System.out.println("0. Para Finalizar el Programa");
+
       try {
         opc = Integer.parseInt(s1.nextLine());
-        if ((opc < 1) || (opc > 2)) {
+        if ((opc < 0) || (opc > 2)) {
           System.out.print("\nError, el número: " + opc + " no es una opción\n");
           System.out.println("Inténtelo de nuevo...");
         }
       } catch (NumberFormatException e) {
-          System.out.print("\nNo se permiten letras. Inténtelo de nuevo...\n");
+          System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
           opc = -1;
       }
 
-      if ((opc < 1) || (opc > 2)) {
+      if ((opc < 0) || (opc > 2)) {
           boleano = false;
       } else {
           boleano = true;
@@ -70,7 +74,7 @@ public class Matrices {
                    
                  break;
              default:
-                 throw new AssertionError();
+                System.out.println("Saliendo del programa .......");
          }
      
      }
