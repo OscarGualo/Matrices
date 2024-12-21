@@ -14,14 +14,32 @@ import java.util.Arrays;
 public class Matrices {
 
    public static void main(String[] args) {
-         
-         Scanner s1 = new Scanner(System.in);
-         int opc = 0 ; 
-          int y = 0; 
-         System.out.println("Que desea hallar ?");
-         System.out.println("1. Valor Propio");
-         System.out.println("2. Vector propio");
-         opc = s1.nextInt();
+    Scanner s1 = new Scanner(System.in);
+    int opc = 0 ; 
+    int y = 0; 
+    boolean boleano;
+    do {
+      System.out.println("Que desea hallar ?");
+      System.out.println("1. Valor Propio");
+      System.out.println("2. Vector propio");
+      try {
+        opc = Integer.parseInt(s1.nextLine());
+        if ((opc < 1) || (opc > 2)) {
+          System.out.print("\nError, el número: " + opc + " no es una opción\n");
+          System.out.println("Inténtelo de nuevo...");
+        }
+      } catch (NumberFormatException e) {
+          System.out.print("\nNo se permiten letras. Inténtelo de nuevo...\n");
+          opc = -1;
+      }
+
+      if ((opc < 1) || (opc > 2)) {
+          boleano = false;
+      } else {
+          boleano = true;
+      }
+  } while (!boleano);
+
          switch (opc) {
              case 1:
                  int x = 0; 
