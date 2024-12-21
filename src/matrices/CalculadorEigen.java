@@ -6,7 +6,7 @@ package matrices;
 
 /**
  *
- * @author oscar
+ * @author oscar, ariel
  */
 import java.util.Arrays;
 public class CalculadorEigen {

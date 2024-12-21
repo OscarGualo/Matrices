@@ -7,7 +7,7 @@ package matrices;
 
 /**
  *
- * @author oscar
+ * @author oscar,ariel
  */
 import java.util.Scanner;
 import java.util.Arrays;
@@ -16,8 +16,7 @@ public class Matrices {
    public static void main(String[] args) {
     Scanner s1 = new Scanner(System.in);
     int opc = 0 ; 
-    int y = 0; 
-    boolean boleano;
+    boolean boleano, aux;
     
     do {
       System.out.println("//// BIENVENIDOS AL INICIO DEL PROGRAMA /// \n");
@@ -30,7 +29,7 @@ public class Matrices {
         opc = Integer.parseInt(s1.nextLine());
         if ((opc < 0) || (opc > 2)) {
           System.out.print("\nError, el número: " + opc + " no es una opción\n");
-          System.out.println("Inténtelo de nuevo...");
+          System.out.println("Inténtelo de nuevo...\n");
         }
       } catch (NumberFormatException e) {
           System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
@@ -45,25 +44,53 @@ public class Matrices {
   } while (!boleano);
 
          switch (opc) {
-             case 1:
-                 int x = 0; 
-                 System.out.println("De que tamaño es su matriz ");
-                 x = s1. nextInt();
-                 //para camibar esto mejor implementar interfaces y dejar una matrizN
-                   MatrizN matriz = new MatrizN(x);
-                   matriz.llenarMatriz();
-                   matriz.llenarVectorPropio();
-                   CalculadorEigen calculadora = new CalculadorEigen(matriz);
-                   matriz.mostrarEcuacionGeneral();
-                   calculadora.mostrarValoresPropios();
-                     
+            case 1:
+              int x = 0;
+              do {
+              System.out.println("De que tamaño es su matriz ");
+                try {
+                  x = Integer.parseInt(s1.nextLine());
+                  if (x < 0) {
+                    System.out.print("\nError, el número: " + x + " no es una opción\n");
+                    System.out.println("Inténtelo de nuevo...\n");
+                  }
+                } catch (NumberFormatException e) {
+                  System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
+                }
+                if (x < 0) {
+                  aux = false;
+                } else {
+                  aux = true;
+                }
+              } while (!aux);
+                //para camibar esto mejor implementar interfaces y dejar una matrizN
+                MatrizN matriz = new MatrizN(x);
+                matriz.llenarMatriz();
+                matriz.llenarVectorPropio();
+                CalculadorEigen calculadora = new CalculadorEigen(matriz);
+                matriz.mostrarEcuacionGeneral();
+                calculadora.mostrarValoresPropios();
+            break;
+             case 2:
+             int y = 0;
+             do {
+                 System.out.println("De qué tamaño es su matriz ");
+                 try {
+                     y = Integer.parseInt(s1.nextLine()); 
+                     if (y < 0) {
+                         System.out.print("\nError, el número: " + y + " no es una opción\n");
+                         System.out.println("Inténtelo de nuevo...\n");
+                         aux = false; 
+                     } else {
+                         aux = true; 
+                     }
+                 } catch (NumberFormatException e) {
+                     System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
+                     aux = false; // Mantener el ciclo activo en caso de error de formato
+                 }
                  
-                 
-                 break;
-             case 2: 
-                
-                 System.out.println("De que tamaño es su matriz ");
-                 y = s1. nextInt();
+             } while (!aux);
+             
                  System.out.println("Ingrese el valor propio: ");
                   int valorPropio = s1.nextInt();
                  //para camibar esto mejor implementar interfaces y dejar una matrizN
