@@ -92,7 +92,7 @@ public  class MatrizN {
         return sb.toString();
     }
    /**
-    * Este metodo va a mostrar la ecuacion usada para encontrar los valores propios
+    * Este metodo va a mostrar la ecuacion usada para encontrar los valores propios 
     */
    public void mostrarEcuacionGeneral(){
        
