@@ -19,6 +19,7 @@ public  class MatrizN {
    private int[][] vectorPropio;
    private int[][] matrizGenerica ; 
    private int dimension; 
+   private boolean aux;
    Scanner s1 = new Scanner(System.in);
    public MatrizN(int dimension){
        matrizGenerica = new int[dimension][dimension];
@@ -32,16 +33,32 @@ public  class MatrizN {
    public void llenarMatriz(){
        for (int i = 0; i < matrizGenerica.length; i++) {
             for (int j = 0; j < matrizGenerica [i].length; j++) {
-                System.out.println("Ingrese el valor para la pos " + i + " " + j);
-                matrizGenerica[i][j] = s1.nextInt();
+                do {
+                    System.out.println("Ingrese el valor (En números enteros) para la pos de la matriz: " + i + " " + j);
+                    try {
+                        matrizGenerica[i][j] = Integer.parseInt(s1.nextLine()); 
+                        aux = true; 
+                    } catch (NumberFormatException e) {
+                        System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
+                        aux = false;
+                    }
+                } while (!aux);
             }
         }
    } 
     public void llenarVectorPropio(){
        for (int i = 0; i < vectorPropio.length; i++) {
             for (int j = 0; j < vectorPropio [i].length; j++) {
-                System.out.println("Ingrese el valor para la pos del vector  " + i + " " + j);
-                vectorPropio[i][j] = s1.nextInt();
+                do {
+                    System.out.println("Ingrese el valor (En números enteros) para la pos del vector: " + i + " " + j);
+                    try {
+                        vectorPropio[i][j] = Integer.parseInt(s1.nextLine()); 
+                        aux = true; 
+                    } catch (NumberFormatException e) {
+                        System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
+                        aux = false;
+                    }
+                } while (!aux);
             }
         }
    }    
