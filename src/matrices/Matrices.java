@@ -21,14 +21,16 @@ public class Matrices {
             do {
                 System.out.println("//// BIENVENIDOS AL INICIO DEL PROGRAMA /// \n");
                 System.out.println("--- Que desea hallar ? ---\n");
-                System.out.println("2. Vector propio");
-                System.out.println("1. Valor Propio");
-                System.out.println("0. Para Finalizar el Programa");
-
+                System.out.println("--------------------------------");
+                System.out.println("2. ** Vector propio ** ");
+                System.out.println("1. ** Valor Propio **");
+                System.out.println("0. ** Para Finalizar el Programa **");
+                System.out.println("--------------------------------");
+                System.out.print(">> '");
                 try {
                     opc = Integer.parseInt(s1.nextLine());
                     if ((opc < 0) || (opc > 2)) {
-                        System.out.print("\nError, el número: " + opc + " no es una opción\n");
+                        System.out.print("\n/// Error ///. El número: " + opc + " no es una opción\n");
                         System.out.println("Inténtelo de nuevo...\n");
                     }
                 } catch (NumberFormatException e) {
@@ -46,11 +48,12 @@ public class Matrices {
                 case 1:
                     int x = 0;
                     do {
-                        System.out.println("De qué tamaño es su matriz ");
+                        System.out.println("De qué tamaño es su matriz (2 - 3):");
+                        System.out.print(">> '");
                         try {
                             x = Integer.parseInt(s1.nextLine());
-                            if (x < 0) {
-                                System.out.print("\nError, el número: " + x + " no es una opción\n");
+                            if ((x < 2) || (x > 3)) {
+                                System.out.print("\n/// Error ///. El número: " + x + " no es una opción\n");
                                 System.out.println("Inténtelo de nuevo...\n");
                                 aux = false;
                             } else {
@@ -75,11 +78,12 @@ public class Matrices {
                     int y = 0,
                      valorPropio = 0;
                     do {
-                        System.out.println("De qué tamaño es su matriz ");
+                        System.out.println("De qué tamaño es su matriz (2 - 3):");
+                        System.out.print(">> '");
                         try {
                             y = Integer.parseInt(s1.nextLine());
-                            if (y < 0) {
-                                System.out.print("\nError, el número: " + y + " no es una opción\n");
+                            if ((y < 2) || (y > 3)) {
+                                System.out.print("\n/// Error ///. El número: " + y + " no es una opción\n");
                                 System.out.println("Inténtelo de nuevo...\n");
                                 aux = false;
                             } else {
@@ -93,6 +97,7 @@ public class Matrices {
 
                     do {
                         System.out.println("Ingrese el valor propio (En números enteros): ");
+                        System.out.print(">> '");
                         try {
                             valorPropio = Integer.parseInt(s1.nextLine());
                             aux = true;
@@ -119,13 +124,16 @@ public class Matrices {
             do {
                 System.out.println("//// FIN DEL PROGRAMA /// \n");
                 System.out.println("--- Desea continuar ?? ---\n");
-                System.out.println("1. Para Reiniciar");
-                System.out.println("0. Para Finalizar el Programa");
+                System.out.println("--------------------------------");
+                System.out.println("1. ** Para Reiniciar **");
+                System.out.println("0. ** Para Finalizar el Programa **");
+                System.out.println("--------------------------------");
+                System.out.print(">> '");
 
                 try {
                     opc = Integer.parseInt(s1.nextLine());
                     if ((opc < 0) || (opc > 1)) {
-                        System.out.print("\nError, el número: " + opc + " no es una opción\n");
+                        System.out.print("\n/// Error ///. El número: " + opc + " no es una opción\n");
                         System.out.println("Inténtelo de nuevo...\n");
                     }
                 } catch (NumberFormatException e) {

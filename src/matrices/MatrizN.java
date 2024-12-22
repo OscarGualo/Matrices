@@ -35,6 +35,7 @@ public class MatrizN {
             for (int j = 0; j < matrizGenerica[i].length; j++) {
                 do {
                     System.out.println("Ingrese el valor (En números enteros) para la pos de la matriz: " + i + " " + j);
+                    System.out.print(">> '");
                     try {
                         matrizGenerica[i][j] = Integer.parseInt(s1.nextLine());
                         aux = true;
@@ -52,6 +53,7 @@ public class MatrizN {
             for (int j = 0; j < vectorPropio[i].length; j++) {
                 do {
                     System.out.println("Ingrese el valor (En números enteros) para la pos del vector: " + i + " " + j);
+                    System.out.print(">> '");
                     try {
                         vectorPropio[i][j] = Integer.parseInt(s1.nextLine());
                         aux = true;
