@@ -11,7 +11,6 @@ import java.util.Scanner;
  *
  * @author oscar
  */
-<<<<<<< HEAD
 public class MatrizN {
 
     private int valorPropio;
@@ -25,65 +24,6 @@ public class MatrizN {
         matrizGenerica = new int[dimension][dimension];
         vectorPropio = new int[dimension][1];
         this.dimension = dimension;
-=======
-public  class MatrizN {
-   private int valorPropio;
-   private int[][] vectorPropio;
-   private int[][] matrizGenerica ; 
-   private int dimension; 
-   private boolean aux;
-   Scanner s1 = new Scanner(System.in);
-   public MatrizN(int dimension){
-       matrizGenerica = new int[dimension][dimension];
-       vectorPropio = new int[dimension][1];
-       this.dimension = dimension; 
-   }
-   public MatrizN(int dimension, int valorPropio){
-       matrizGenerica = new int[dimension][dimension];
-   }
-   
-   public void llenarMatriz(){
-       for (int i = 0; i < matrizGenerica.length; i++) {
-            for (int j = 0; j < matrizGenerica [i].length; j++) {
-                do {
-                    System.out.println("Ingrese el valor (En números enteros) para la pos de la matriz: " + i + " " + j);
-                    try {
-                        matrizGenerica[i][j] = Integer.parseInt(s1.nextLine()); 
-                        aux = true; 
-                    } catch (NumberFormatException e) {
-                        System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
-                        aux = false;
-                    }
-                } while (!aux);
-            }
-        }
-   } 
-    public void llenarVectorPropio(){
-       for (int i = 0; i < vectorPropio.length; i++) {
-            for (int j = 0; j < vectorPropio [i].length; j++) {
-                do {
-                    System.out.println("Ingrese el valor (En números enteros) para la pos del vector: " + i + " " + j);
-                    try {
-                        vectorPropio[i][j] = Integer.parseInt(s1.nextLine()); 
-                        aux = true; 
-                    } catch (NumberFormatException e) {
-                        System.out.print("\nOpción Inválida. Inténtelo de nuevo...\n\n");
-                        aux = false;
-                    }
-                } while (!aux);
-            }
-        }
-   }    
-    public String mostrarVectorPropio(){
-        StringBuilder sb = new StringBuilder("Matriz:\n");
-        for (int[] fila : vectorPropio) {
-            for (int valor : fila) {
-                sb.append(valor).append(" ");
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
->>>>>>> ebcff7390de81e9098c55e0f2d2971bbfae6bfa4
     }
 
     public MatrizN(int dimension, int valorPropio) {
